@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fileino | فایلیِینو</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f4f6f8;
+  color:#17202a;
+}
+
+header{
+  background:#111827;
+  color:white;
+  padding:22px 0;
+}
+
+.container{
+  width:92%;
+  max-width:1000px;
+  margin:auto;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#60a5fa;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+  font-size:14px;
+}
+
+.hero{
+  text-align:center;
+  padding:70px 20px 45px;
+}
+
+.hero h1{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.hero h1 span{
+  color:#2563eb;
+}
+
+.hero p{
+  color:#667085;
+  line-height:2;
+}
+
+.upload{
+  background:white;
+  max-width:650px;
+  margin:20px auto 60px;
+  padding:45px 25px;
+  border-radius:24px;
+  border:2px dashed #cbd5e1;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+
+.icon{
+  font-size:55px;
+  margin-bottom:15px;
+}
+
+.upload h2{
+  margin-bottom:10px;
+}
+
+.upload p{
+  color:#667085;
+  margin-bottom:25px;
+}
+
+input{
+  display:none;
+}
+
+.button{
+  display:inline-block;
+  background:#2563eb;
+  color:white;
+  padding:14px 30px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+#result{
+  margin-top:18px;
+  color:#2563eb;
+  font-size:14px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:60px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.card div{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#667085;
+  font-size:13px;
+  line-height:1.8;
+}
+
+footer{
+  background:#111827;
+  color:#cbd5e1;
+  text-align:center;
+  padding:25px;
+  font-size:13px;
+}
+
+@media(max-width:700px){
+  nav{display:none}
+  .features{grid-template-columns:1fr}
+  .hero h1{font-size:30px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header">
+    <div class="logo">File<span>ino</span></div>
+
+    <nav>
+      <div>خانه</div>
+      <div>فایل‌ها</div>
+      <div>درباره ما</div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>به <span>فایلیِینو</span> خوش آمدید</h1>
+  <p>
+    یک فضای ساده و سریع برای مدیریت و نگهداری فایل‌های شما.
+  </p>
+</section>
+
+<section class="upload">
+  <div class="icon">📁</div>
+
+  <h2>آپلود فایل</h2>
+
+  <p>فایل موردنظر خود را انتخاب کنید.</p>
+
+  <label class="button" for="file">
+    انتخاب فایل
+  </label>
+
+  <input id="file" type="file" onchange="showFile()">
+
+  <div id="result"></div>
+</section>
+
+<section class="container features">
+
+  <div class="card">
+    <div>⚡</div>
+    <h3>سریع</h3>
+    <p>دسترسی سریع و ساده به فایل‌ها.</p>
+  </div>
+
+  <div class="card">
+    <div>🔒</div>
+    <h3>امن</h3>
+    <p>طراحی ساده با تمرکز روی امنیت.</p>
+  </div>
+
+  <div class="card">
+    <div>📱</div>
+    <h3>موبایل</h3>
+    <p>مناسب گوشی، تبلت و کامپیوتر.</p>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Fileino — فایلیِینو
+</footer>
+
+<script>
+function showFile(){
+  const file=document.getElementById("file");
+  const result=document.getElementById("result");
+
+  if(file.files.length){
+    result.innerHTML="فایل انتخاب شد: "+file.files[0].name;
+  }
+}
+</script>
+
+</body>
+</html>
