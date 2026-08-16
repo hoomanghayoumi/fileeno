@@ -1,130 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fileino | Smart Real Estate</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Tahoma,Arial,sans-serif;
+background:#f4f6f8;
+color:#17202a;
+}
+
+header{
+background:#111827;
+color:white;
+padding:22px 0;
+}
+
+.container{
+width:92%;
+max-width:1000px;
+margin:auto;
+}
+
 .header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
-  font-size:25px;
-  font-weight:bold;
+font-size:25px;
+font-weight:bold;
 }
 
 .logo span{
-  color:#60a5fa;
-}
-
-nav{
-  display:flex;
-  gap:20px;
-  font-size:14px;
+color:#60a5fa;
 }
 
 .hero{
-  text-align:center;
-  padding:70px 20px 45px;
+text-align:center;
+padding:55px 15px 30px;
 }
 
 .hero h1{
-  font-size:38px;
-  margin-bottom:15px;
+font-size:34px;
+margin-bottom:12px;
 }
 
 .hero h1 span{
-  color:#2563eb;
+color:#2563eb;
 }
 
 .hero p{
-  color:#667085;
-  line-height:2;
+color:#667085;
+line-height:2;
 }
 
-.upload{
-  background:white;
-  max-width:650px;
-  margin:20px auto 60px;
-  padding:45px 25px;
-  border-radius:24px;
-  border:2px dashed #cbd5e1;
-  text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,.06);
+.search{
+background:white;
+max-width:800px;
+margin:20px auto 35px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
-.icon{
-  font-size:55px;
-  margin-bottom:15px;
+.search h2{
+margin-bottom:20px;
+font-size:20px;
 }
 
-.upload h2{
-  margin-bottom:10px;
+.inputs{
+display:grid;
+grid-template-columns:1fr 1fr auto;
+gap:12px;
 }
 
-.upload p{
-  color:#667085;
-  margin-bottom:25px;
+input,button{
+font-family:inherit;
 }
 
 input{
-  display:none;
+width:100%;
+padding:14px;
+border:1px solid #d0d5dd;
+border-radius:10px;
+font-size:14px;
 }
 
-.button{
-  display:inline-block;
-  background:#2563eb;
-  color:white;
-  padding:14px 30px;
-  border-radius:12px;
-  cursor:pointer;
-  font-weight:bold;
+button{
+border:0;
+background:#2563eb;
+color:white;
+padding:14px 25px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#1d4ed8;
 }
 
 #result{
-  margin-top:18px;
-  color:#2563eb;
-  font-size:14px;
+margin-top:20px;
 }
 
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-bottom:60px;
+.property{
+background:#f8fafc;
+border:1px solid #e2e8f0;
+padding:18px;
+border-radius:14px;
+margin-top:12px;
 }
 
-.card{
-  background:white;
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.05);
+.property h3{
+margin-bottom:8px;
 }
 
-.card div{
-  font-size:32px;
-  margin-bottom:12px;
+.property p{
+color:#667085;
+font-size:14px;
+line-height:2;
 }
 
-.card h3{
-  margin-bottom:8px;
+.empty{
+text-align:center;
+color:#667085;
+padding:20px;
 }
 
-.card p{
-  color:#667085;
-  font-size:13px;
-  line-height:1.8;
+@media(max-width:650px){
+.inputs{
+grid-template-columns:1fr;
 }
 
-footer{
-  background:#111827;
-  color:#cbd5e1;
-  text-align:center;
-  padding:25px;
-  font-size:13px;
+.hero h1{
+font-size:28px;
 }
-
-@media(max-width:700px){
-  nav{display:none}
-  .features{grid-template-columns:1fr}
-  .hero h1{font-size:30px}
 }
 </style>
 </head>
@@ -132,75 +149,133 @@ footer{
 <body>
 
 <header>
-  <div class="container header">
-    <div class="logo">File<span>ino</span></div>
-
-    <nav>
-      <div>خانه</div>
-      <div>فایل‌ها</div>
-      <div>درباره ما</div>
-    </nav>
-  </div>
+<div class="container header">
+<div class="logo">File<span>ino</span></div>
+</div>
 </header>
 
 <section class="hero">
-  <h1>به <span>فایلیِینو</span> خوش آمدید</h1>
-  <p>
-    یک فضای ساده و سریع برای مدیریت و نگهداری فایل‌های شما.
-  </p>
+<h1>جستجوی هوشمند <span>فایل‌های ملکی</span></h1>
+<p>
+بودجه مشتری را وارد کنید تا فایل‌های مناسب در همان بازه نمایش داده شوند.
+</p>
 </section>
 
-<section class="upload">
-  <div class="icon">📁</div>
+<section class="search">
 
-  <h2>آپلود فایل</h2>
+<h2>🔎 جستجو بر اساس بودجه</h2>
 
-  <p>فایل موردنظر خود را انتخاب کنید.</p>
+<div class="inputs">
 
-  <label class="button" for="file">
-    انتخاب فایل
-  </label>
+<input
+id="minPrice"
+type="number"
+placeholder="حداقل قیمت (میلیارد)"
+>
 
-  <input id="file" type="file" onchange="showFile()">
+<input
+id="maxPrice"
+type="number"
+placeholder="حداکثر قیمت (میلیارد)"
+>
 
-  <div id="result"></div>
-</section>
+<button onclick="searchProperties()">
+جستجو
+</button>
 
-<section class="container features">
+</div>
 
-  <div class="card">
-    <div>⚡</div>
-    <h3>سریع</h3>
-    <p>دسترسی سریع و ساده به فایل‌ها.</p>
-  </div>
-
-  <div class="card">
-    <div>🔒</div>
-    <h3>امن</h3>
-    <p>طراحی ساده با تمرکز روی امنیت.</p>
-  </div>
-
-  <div class="card">
-    <div>📱</div>
-    <h3>موبایل</h3>
-    <p>مناسب گوشی، تبلت و کامپیوتر.</p>
-  </div>
+<div id="result"></div>
 
 </section>
-
-<footer>
-  © 2026 Fileino — فایلیِینو
-</footer>
 
 <script>
-function showFile(){
-  const file=document.getElementById("file");
-  const result=document.getElementById("result");
 
-  if(file.files.length){
-    result.innerHTML="فایل انتخاب شد: "+file.files[0].name;
-  }
+const properties = [
+
+{
+title:"آپارتمان ۲ خوابه",
+price:7.5,
+area:105,
+rooms:2
+},
+
+{
+title:"آپارتمان ۳ خوابه",
+price:8,
+area:135,
+rooms:3
+},
+
+{
+title:"آپارتمان ۲ خوابه",
+price:4.8,
+area:85,
+rooms:2
+},
+
+{
+title:"آپارتمان ۳ خوابه لوکس",
+price:10.5,
+area:160,
+rooms:3
 }
+
+];
+
+function searchProperties(){
+
+const min=parseFloat(
+document.getElementById("minPrice").value
+);
+
+const max=parseFloat(
+document.getElementById("maxPrice").value
+);
+
+const result=document.getElementById("result");
+
+if(isNaN(min) || isNaN(max)){
+
+result.innerHTML=
+'<div class="empty">لطفاً حداقل و حداکثر قیمت را وارد کنید.</div>';
+
+return;
+}
+
+const matches=properties.filter(property =>
+property.price >= min &&
+property.price <= max
+);
+
+if(matches.length===0){
+
+result.innerHTML=
+'<div class="empty">در این بازه قیمتی فایلی پیدا نشد.</div>';
+
+return;
+}
+
+result.innerHTML=matches.map(property => `
+
+<div class="property">
+
+<h3>${property.title}</h3>
+
+<p>
+💰 قیمت: ${property.price} میلیارد تومان
+<br>
+📐 متراژ: ${property.area} متر
+<br>
+🛏️ خواب: ${property.rooms}
+</p>
+
+</div>
+
+`).join("");
+
+}
+
 </script>
 
 </body>
